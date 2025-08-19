@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong Game - SPA</title>
+  <link rel="stylesheet" type="text/css" href="static/css/start_page.css">
+  <link rel="stylesheet" type="text/css" href="static/css/game.css">
+  <link rel="stylesheet" type="text/css" href="static/css/chat.css">
+  <link rel="stylesheet" type="text/css" href="static/css/profile_page.css">
+  <audio id="audioPlayer" src="static/audio/audio.wav" type="audio/wav"></audio>
+</head>
+<body>
+
+  <div id="pageContainer">
+    <!-- Content will be loaded here -->
+  </div>
+  <div class="language-selector">
+    <button id="lang-button">
+      <img src="static/img/en.png" alt="English" id="current-lang-flag">
+    </button>
+    <div id="lang-dropdown" class="lang-dropdown">
+      <button class="lang-option" data-lang="en">
+        <img src="static/img/en.png" alt="English">
+      </button>
+      <button class="lang-option" data-lang="de">
+        <img src="static/img/de.png" alt="Deutsch">
+      </button>
+      <button class="lang-option" data-lang="pl">
+        <img src="static/img/pl.png" alt="Polski">
+      </button>
+    </div>
+  </div>
+  
+  <link rel="icon" type="image/icon" href="favicon.ico">
+  <script type="module" src="static/js/routing.js"></script>
+  <script type="module" src="static/js/start.js"></script>
+  <script type="module" src="static/js/login.js"></script>
+  <script type="module" src="static/js/register.js"></script>
+  <script type="module" src="static/js/404.js"></script>
+  <script type="module" src="static/js/profile.js"></script>
+  <script type="module" src="static/js/translations.js"></script>
+  <script type="module" src="static/js/game/game-local.js"></script>
+  <script type="module" src="static/js/languageSelector.js"></script>
+  <script type="module" src="static/js/chat/debug_chat.js"></script>
+  <script type="module" src="static/js/chat/utils_chat.js"></script>
+  <script type="module" src="static/js/chat/remaining_chars.js"></script>
+  <script type="module" src="static/js/chat/global_chat.js"></script>
+  <script type="module" src="static/js/chat/private_chat.js"></script>
+  <script type="module" src="static/js/chat/message_chat.js"></script>
+  <script type="module" src="static/js/chat/profile_chat.js"></script>
+  <script type="module" src="static/js/chat/userlist_chat.js"></script>
+</body>
+
+</html>

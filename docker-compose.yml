@@ -1,0 +1,113 @@
+networks:
+  nw:
+    driver: bridge
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: ["nginx", "-g", "daemon off;"]
+    networks:
+      - nw
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6378:6379"
+    networks:
+      - nw
+
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile 
+    env_file:
+      - .env  
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - HOST_IP=${HOST_IP}
+    networks:
+      - nw
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    environment:
+      - HOST_IP=${HOST_IP}
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf # Ensure nginx.conf is correctly set up
+      - ./nginx/conf.d:/etc/nginx/conf.d # Ensure additional configurations are in place
+      - media_volume:/code/media
+    ports:
+      - "80:80" #Access the combined app on localhost:8
+      - "443:443" #https web communication
+    depends_on:
+      - frontend
+      - backend
+      - api42
+    networks:
+      - nw
+
+  dbapi:
+    image: postgres:latest
+    container_name: dbapi42
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER_API}
+      - POSTGRES_DB=${POSTGRES_DB_API}
+    volumes:
+      - ./init/init-api42:/docker-entrypoint-initdb.d
+      - postgres_data_api:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - nw
+
+  api42:
+    container_name: api42
+    build:
+      context: ./Api42
+      dockerfile: Dockerfile
+    entrypoint: /entrypoint.sh
+    command: uvicorn ApiMain.asgi:application --host 0.0.0.0 --port 8080 --reload
+    environment:
+      - INTRA_UID_42=${INTRA_UID_42}
+      - INTRA_SECRET_42=${INTRA_SECRET_42}
+      - REDIRECT_URI=${REDIRECT_URI}
+      - DB_USER_API=${DB_USER_API}
+      - DB_API=${DB_API}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST_API=${DB_HOST_API}
+      - DB_PORT_API=${DB_PORT_API}
+      - JWT_SIGNKEY=${JWT_SIGNKEY}
+      - SUPERUSER_NAME=${SUPERUSER_NAME}
+      - SUPERUSER_EMAIL=${SUPERUSER_Email}
+      - SUPERUSER_PASS=${SUPERUSER_PASS}
+      - HOST_IP=${HOST_IP}
+    volumes:
+      - ./Api42:/code
+      - ./images:/code/images
+      - media_volume:/code/media
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbapi
+    networks:
+      - nw
+
+volumes:
+  postgres_data_api:
+  db_data:
+  media_volume:
+    driver: local

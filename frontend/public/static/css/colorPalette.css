@@ -1,0 +1,20 @@
+ /* Orange Colors */
+ .orange-1 { background-color: #b6611a; }
+ .orange-2 { background-color: #b5621c; }
+ .orange-3 { background-color: #d37f31; }
+ .orange-4 { background-color: #e9a25b; }
+ .orange-5 { background-color: #f4cc8e; }
+ .orange-6 { background-color: #fcd68d; }
+
+ /* Pink/Red Colors */
+ .pink-1 { background-color: #310b1a; }
+ .pink-2 { background-color: hsl(337, 58%, 39%); }
+ .pink-3 { background-color: rgb(127, 15, 63); }
+ .pink-4 { background-color: rgb(160, 42, 84); }
+ .pink-5 { background-color: #97366a; }
+ .pink-6 { background-color: #0c0001; }
+
+ /* Blue Colors */
+ .blue-1 { background-color: #00343a; }
+ .blue-2 { background-color: #17677e; }
+ .blue-3 { background-color: #217784; }

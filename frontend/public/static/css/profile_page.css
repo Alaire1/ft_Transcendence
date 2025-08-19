@@ -1,0 +1,356 @@
+.profile-page .container {
+    background-color: #1a1110;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-page .col {
+    flex: 1;
+    padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-page .settings-column,
+.profile-page .middle-column,
+.profile-page .friends-column {
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.profile-page .middle-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.profile-page .settings-box,
+.profile-page .welcome-box,
+.profile-page .start-game-box,
+.profile-page .friends-box,
+.profile-page .scoreboard-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #e9a25b;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.profile-page .welcome-box,
+.profile-page .start-game-box,
+.profile-page .friends-box,
+.profile-page .scoreboard-box {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.profile-page .welcome-box,
+.profile-page .start-game-box {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.profile-page .scoreboard-box,
+.profile-page .start-game-box, 
+.profile-page .welcome-box{
+    flex: 1;
+    margin-bottom: 20px;
+    height: 48%;
+}
+
+.all-users-box {
+    overflow: scroll;
+}
+
+.all-users {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.friends-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.friends-group {
+    height: 40%;
+}
+
+.friends-box {
+    overflow: scroll;
+    height: 100%
+}
+
+.item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile-page .settings-box {
+    flex: 1;
+    margin-bottom: 20px;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: scroll;
+}
+
+.profile-page .friends-box,
+.profile-page .scoreboard-box
+{
+
+    overflow-y: auto;
+}
+
+.profile-page .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.profile-page .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: black;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.profile-page .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-page .start-game-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-page .profile-greeting {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.header_profile {
+    text-align: left;
+}
+
+.button-pixel {
+    font-size: 1.2em;
+    background-color: transparent;
+    background-image: url('../img/button_burgund.svg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 260px;
+    height: 80px; 
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.custom-file-label {
+    background-color: #7e0f3f;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+.custom-file-label:hover {
+    background-color: #b82d3a;
+}
+
+.button-pixel:hover {
+    background-image: url('../img/button_press.svg');
+}
+
+#user-settings-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#user-settings-form div {
+    margin-bottom: 10px;
+}
+
+#user-settings-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#user-settings-form input,
+#user-settings-form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.hello-box {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.hello-size {
+    margin-right: 5px; /* Add some space between the elements */
+}
+
+#profile-username {
+    font-weight: bold; /* Optional: Make the username bold */
+}
+.start-game-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust the height as needed */
+}
+
+.start-game-image {
+    width: 65%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.start-game-box .button-pixel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the button is above the image */
+}
+
+.update-button {
+    font-size: 0.8em;
+    background-color: transparent;
+    background-image: url('../img/button_s_burgund.svg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 90px;
+    height: 40px; 
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Add this CSS to your stylesheet */
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.input-wrapper {
+    align-items: right;
+    display:  flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group input{
+    flex: 1;
+    margin-bottom: 5px; /* Add space between the input field and the button */
+}
+
+.input-wrapper button {
+    flex-shrink: 0;
+}
+
+/* Ensure friends-group holds both sections side by side */
+.profile-page .friends-group {
+    display: flex;
+    flex-direction: row; /* Side-by-side layout */
+    align-items: stretch; /* Ensures both lists have the same height */
+    justify-content: space-between; /* Adds space between them */
+    gap: 20px; /* Adds spacing between lists */
+    width: 100%; /* Ensures it spans full width */
+    margin-bottom: 20px;
+}
+
+/* Individual boxes take equal space */
+.profile-page .friends-box,
+.profile-page .all-users-box {
+    flex: 1; /* Makes both sections take equal width */
+    background: #e9a25b; /* Light background */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* Scrolls if content exceeds height */
+}
+
+/* Header styling */
+.profile-page .friends-box h2,
+.profile-page .all-users-box h2 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.friend-action-btn {
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.label-2fa {
+    max-width: 30%;
+}
+
+.add-friend-btn {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.add-friend-btn:hover {
+    background-color: #45a049;
+}

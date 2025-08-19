@@ -1,0 +1,455 @@
+.main-page {
+  background-image: none;
+  display: flex;
+  flex-direction: column;       
+  height: 100vh; 
+  width: 100vw;               
+  overflow: hidden;              
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;        
+  flex: 1 1 auto;                
+  overflow: auto;                
+  padding: 10px;                  
+  background-color: #1a1110;      
+}
+
+.content-three-column {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-icon {
+
+  height: 24px;
+  width: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.message-submit:hover .svg-icon {
+  filter: none;
+}
+
+.content-column {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;
+}
+
+.content-middle-column {
+  width: 60%;
+}
+
+.glow-green {
+  box-shadow: 0 0 10px 5px limegreen;
+}
+
+.glow-orange {
+  box-shadow: 0 0 10px 5px orange;
+}
+
+.chat-container {
+  height: 40%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 5px;
+  color: white;
+  align-items: flex-start;
+}
+
+.chat-container-full {
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 5px;
+  color: white;
+  align-items: flex-start;
+}
+
+
+.game-box {
+  all: unset;
+  border: 1px solid white;
+  max-height: 70vh;
+  aspect-ratio: 1 / 0.7;           
+  background-color: black;   
+  border-radius: 8px;        
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  margin: 0 auto;           
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.half-court-left, .half-court-right {
+  height: 100%;
+  width: 2px;
+  background-color: #fff;
+  position: absolute; 
+  top: 0;
+}
+
+.half-court-left {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.paddle {
+  height: 60px;
+  width: 10px;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.scoreboard {
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.tutorial-container {
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  background-color: #7f0f3f;
+  border-radius: 10%;
+  padding: 50px;
+  width: 20%;
+  box-shadow: 0px 10px 30px rgba(237, 164, 164, 0.3);
+}
+
+.x {
+  align-self: flex-end;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+#tutorial-link {
+  cursor: pointer;
+}
+
+.spacer {
+  padding: 10px;
+}
+
+
+.scorecard {
+    aspect-ratio: 1/1;
+    width: 75px;
+    display: flex;
+    flex-direction: column; /* Stack player name and score vertically */
+    align-items: center;    /* Center content horizontally */
+    justify-content: center;
+    color: white;           /* Text color */
+    background-color: rgba(211, 142, 124, 0.8); */;
+    font-size: 1.2em;       /* Font size */
+    padding: 20px;
+    border-radius: 25%;
+}#scorecard-p1, #scorecard-p2 {
+    margin-bottom: 5px;    /* Space below player names */
+}
+  
+  #score-p1, #score-p2 {
+    font-size: 2em;         /* Larger font for scores */
+    font-weight: bold;      /* Bold scores */
+  }
+ 
+  .right-cards {
+    position: absolute;
+    height: 60vh;
+    width: 80%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 10px;
+    display: none;
+  }
+
+  #end-of-game-modal {
+    display: none;
+  }
+
+  .upcoming-matches {
+    border-radius: 10px;
+    background-color: #d18e7c;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+  }
+
+  .score-table {
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    flex-grow: 1;
+    padding-bottom: 50px;
+  }
+
+  .modal {
+    justify-content: center;
+    width: 50%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    flex-direction:  column;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .modal-border-button {
+    all: unset;
+    border-bottom: 2px solid white;
+    color: white;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+
+  .modal-border-button:hover {
+    background-image: none;
+    animation: flashYellow 0.5s infinite;
+  }
+
+  .modal-button.selected-button {
+    animation: flashYellow 0.5s infinite;
+  }
+
+@keyframes flashYellow {
+  0% {
+    color: white;
+  }
+  50% {
+    color: yellow;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.modal-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-text {
+  text-align: center;
+  color: white;
+}
+
+.modal-text-left {
+  all: unset;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: left;
+  color: white;
+}
+
+.modal-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal-title-small {
+  font-size: 20px;
+  color: white;
+}
+
+.two-column-wrapper {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+
+  .modal-text-entry {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+  }
+  
+  .modal-title {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .modal-button {
+    all: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    text-align: center;
+  }
+
+  .modal-text {
+    all: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #modal-any-key {
+    display: none;
+  }
+
+  #victory-modal {
+    display: none;
+  }
+
+  .section-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #countdown-container {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-wrapper {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-text {
+    color:white;
+  }
+
+  .player-remove {
+    cursor: pointer;
+  }
+
+  .title {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #player-names-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  #modal-tournament {
+    flex-direction: column;
+  }
+
+  #matchup-sample-row {
+    display: none;
+  }
+
+  #sample-row {
+    display: none;
+  }
+  
+  #sample-matchup-row {
+    display: none;
+  }
+
+  td, th {
+    width: 20%;
+  }
+
+  .modal-card {
+    height: 25%;
+    width: 25%;
+    border-radius: 30px;
+    background-color: #d18e7c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .modal-card:hover {
+    background-color: #d8a79a;
+  }
+  
+
+  /* Forgot password page styles */
+
+   /* Orange Colors */
+ .orange-1 { background-color: #b6611a; }
+ .orange-2 { background-color: #b5621c; }
+ .orange-3 { background-color: #d37f31; }
+ .orange-4 { background-color: #e9a25b; }
+ .orange-5 { background-color: #f4cc8e; }
+ .orange-6 { background-color: #fcd68d; }
+
+ /* Pink/Red Colors */
+ .pink-1 { background-color: #310b1a; }
+ .pink-2 { background-color: hsl(337, 58%, 39%); }
+ .pink-3 { background-color: rgb(127, 15, 63); }
+ .pink-4 { background-color: rgb(160, 42, 84); }
+ .pink-5 { background-color: #97366a; }
+ .pink-6 { background-color: #0c0001; }
+
+ /* Blue Colors */
+ .blue-1 { background-color: #00343a; }
+ .blue-2 { background-color: #17677e; }
+ .blue-3 { background-color: #217784; }

@@ -1,0 +1,4 @@
+venv/
+ZLogs.txt
+.idea
+.env

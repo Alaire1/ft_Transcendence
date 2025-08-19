@@ -1,0 +1,80 @@
+<!-- chat/templates/chat/main_chat.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8"/>
+    <title>Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chat/css/room_style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <audio id="audioPlayer" src="{% static 'chat/audio/audio.wav' %}" type="audio/wav"></audio>
+
+</head>
+<body>
+
+    <div id="chat-app">
+        <!-- Global Chat -->
+        <div id="global-chat-container">
+            <h1>Global Chatroom</h1>
+            <div>
+                Name: <input id="chat-name" type="text" size="30">
+            </div>
+            <br>
+            <div id="chat-container">
+                <div id="chat-log"></div>
+            </div>
+            <div id="chat-inputs">
+                <input id="chat-message-input" type="text" size="100">
+                <input id="chat-message-submit" type="button" value="Send">
+                <div>
+                    remaining chars: <span id="char-remaining-global">300</span>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div id="user-list-container">
+            <h3>Active Users</h3>
+            <div id="user-list"></div>
+        </div>
+        <br>
+        <br><br>        <br><br>
+        <br><br>        <br><br>
+        <br><br>        <br><br>
+
+            <!-- Area for private Chat -->
+            <div id="private-chat-container">
+                <h2><div id="private-chat-title">Private Chat</div></h2>
+                <div id="private-chat-log"></div>
+                <div id="private-chat-inputs">
+                    <input id="private-chat-message-input" type="text" size="80">
+                    <input id="private-chat-message-submit" type="button" value="Send">
+                    <div>
+                        remaining chars: <span id="char-remaining-private">300</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+        
+            <div id="user-profile-container">
+                {% comment %} <h3>Profile of <span id="profile-username"></span></h3>
+                    <div id="edit-display-name-container" style="display: none;">
+                        <label for="display-name-input">Display Name: </label>
+                        <input type="text" id="display-name-input" placeholder="Enter new display name">
+                        <button id="save-display-name-button">Save</button>
+                    </div> {% endcomment %}
+                <div id="profile-info">
+
+                </div>
+            </div>
+    </div>
+    <script src="{% static 'chat/js/debug_chat.js' %}"></script>
+    <script src="{% static 'chat/js/utils_chat.js' %}"></script>
+    <script src="{% static 'chat/js/remaining_chars.js' %}"></script>
+    <script src="{% static 'chat/js/global_chat.js' %}"></script>
+    <script src="{% static 'chat/js/private_chat.js' %}"></script>
+
+
+</body>
+</html>
