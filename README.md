@@ -28,108 +28,55 @@ It includes real-time gameplay, user authentication, and integrated chat, all po
 ---
 
 ## Features
-🎮 Gameplay
+### 🎮 Gameplay
+- Classic Pong game implemented in the browser
+- Real-time multiplayer matches over WebSockets
+- Tournament mode supporting multiple players
+- Matchmaking system (manual invites and automatic pairing)
+- Accurate ball & paddle physics handled server-side
+- Score tracking and persistence for each match
 
-Classic Pong game implemented in the browser
+### 👤 User & Authentication
+- User registration and login system
+- JWT-based authentication & authorization for secure stateless access control
+- All protected API endpoints require a valid JWT
+- Tokens are continuously checked and refreshed when expired to maintain valid sessions
+- Secure password hashing with Django’s built-in authentication system
+- Two-factor authentication (2FA) for enhanced account security
+- User profiles with stats (matches played, wins/losses, tournaments)
+- Customizable avatars & usernames
+- Session persistence
 
-Real-time multiplayer matches over WebSockets
+### 💬 Communication
+- Real-time chat system over WebSockets
+- Powered by Django Channels with Redis as the channel layer
+- Global chat room for community interaction
+- Private one-to-one chat between players
 
-Tournament mode supporting multiple players in structured brackets
+### 🌐 Frontend (SPA)
+- Single-Page Application **(SPA)** built with Vanilla JavaScript, HTML5, and CSS3
+- Custom CSS styling with multiple themes/backgrounds for different app sections (login, game, chat, profile)
+- Responsive design for desktop, tablet, and mobile devices
+- Dynamic DOM rendering for live updates of game state, chat messages, and user lists
+- Multi-language support: English, Polish, and German (internationalization)
+- Client-side routing with History API:
+  - Smooth navigation between pages without full reloads
+  - Browser back/forward buttons supported correctly
+  - JWT-protected routes with access control for logged-in users
+- Asynchronous communication with backend via REST API (Django REST Framework) and WebSockets
+- Secure token handling with JWT: checks for expiration, refreshes tokens automatically
+- Full SPA “engineering”: routing, authentication, internationalization (i18n), and history management handled correctly, not just static HTML pages
 
-Matchmaking system (manual invites or automatic pairing)
+### ⚙️ Backend (Django)
+- Built with Django + Django REST Framework (DRF)
+- **JWT** authentication flow with refresh tokens
+- Django Channels for WebSocket handling (real-time game + chat)
+- PostgreSQL for persistent storage
+- Modular app design (auth, game, chat, tournament management)
+- RESTful endpoints for authentication, user data, and match history
 
-Accurate ball & paddle physics handled server-side
+### 🐳 Deployment & DevOps
+- Docker Compose for multi-container orchestration
+- Isolated networks between containers for secure communication
+- Environment configuration via .env file (SECRET_KEY, JWT settings, DB creds)
 
-Score tracking and persistence for each match
-
-👤 User & Authentication
-
-User registration and login system
-
-JWT-based authentication for secure stateless API access
-
-Secure password hashing with Django’s built-in system
-
-Two-factor authentication (2FA) for enhanced account security
-
-User profiles with stats (matches played, wins/losses, tournaments)
-
-Customizable avatars & usernames
-
-Session persistence and secure cookie handling
-
-💬 Communication
-
-Real-time chat system using WebSockets (Django Channels)
-
-Global chat room for community interaction
-
-Private one-to-one chat between players
-
-Chat accessible before, during, and after games
-
-🌐 Frontend (SPA)
-
-Single-Page Application using Vanilla JavaScript, HTML5, and CSS3
-
-Custom CSS for styling (not relying on external frameworks)
-
-Asynchronous communication with backend via REST API (Django REST Framework) and WebSockets
-
-Responsive design for multiple devices (desktop, tablet, mobile)
-
-Dynamic DOM rendering for live updates (game state, chat, user lists)
-
-Different themes/backgrounds for app sections (login, game, chat, etc.)
-
-Multi-language support (internationalization)
-
-⚙️ Backend (Django)
-
-Built with Django + Django REST Framework (DRF)
-
-JWT authentication flow with refresh tokens
-
-Django Channels for WebSocket handling (real-time game + chat)
-
-PostgreSQL (or SQLite in dev) for persistent storage
-
-Modular app design (auth, game, chat, tournament management)
-
-RESTful endpoints for authentication, user data, and match history
-
-Role-based access control (if implemented)
-
-Secure CSRF & CORS handling
-
-🐳 Deployment & DevOps
-
-Dockerized architecture:
-
-backend (Django + DRF + Channels)
-
-frontend (SPA served by Nginx)
-
-nginx (reverse proxy + static assets)
-
-db (PostgreSQL container)
-
-Docker Compose for multi-container orchestration
-
-Isolated networks between containers for secure communication
-
-Environment configuration via .env file (SECRET_KEY, JWT settings, DB creds)
-
-Ready for deployment in both local and cloud environments
-
-🛠️ Development & Testing
-
-Backend unit tests for authentication, WebSockets, and business logic
-
-Database migrations with Django ORM
-
-Logging and error handling for debugging and monitoring
-
-Hot reload for frontend and backend during development
-
-Linting & code style adherence
