@@ -80,3 +80,38 @@ It includes real-time gameplay, user authentication, and integrated chat, all po
 - Isolated networks between containers for secure communication
 - Environment configuration via .env file (SECRET_KEY, JWT settings, DB creds)
 
+--- 
+## Environment Variables (.env)
+To run ft_transcendence locally or in Docker, create a .env file in the backend folder with the following variables:
+### Database Configuration
+```
+DB_NAME=                # Name of your main database (SQLite or PostgreSQL)
+DB_API=                 # API database name (if separate)
+DB_USER_API=            # Database username
+DB_PASSWORD=            # Database password
+DB_HOST_API=            # Database host (e.g., localhost)
+DB_PORT_API=            # Database port (e.g., 5432 for Postgres)
+HOST_IP=                # IP address of the machine running the backend
+```
+### PostgreSQL
+```
+POSTGRES_PASSWORD=      # Password for PostgreSQL
+POSTGRES_USER_API=      # PostgreSQL username
+POSTGRES_DB_API=        # PostgreSQL database name
+```
+### Authentication
+```
+JWT_SIGNKEY=            # Secret key for signing JWT tokens
+```
+### 42 API Integration
+```
+INTRA_UID_42=           # Your 42 API client ID
+INTRA_SECRET_42=        # Your 42 API secret
+REDIRECT_URI=           # Redirect URI for OAuth login
+```
+### Superuser (Django Admin)
+```
+SUPERUSER_NAME=         # Username for Django admin
+SUPERUSER_EMAIL=        # Email for Django admin
+SUPERUSER_PASS=         # Password for Django admin
+```
