@@ -4,7 +4,10 @@
 A web-based multiplayer Pong game built as a single-page application.  
 It includes real-time gameplay, user authentication, and integrated chat, all powered by a Django backend and vanilla JavaScript frontend, fully containerized with Docker.
 
+<img src="gif1.gif" height="600"/>
+
 ---
+
 ## Team
 **[Anita](https://github.com/Alaire1)** **[Tony](https://github.com/tonywilliamspiano)** **[Noah](https://github.com/Nuloiz)** **[Jonas](https://github.com/jonaspeters85)** **[Arafa](https://github.com/ankinzin)**
 
